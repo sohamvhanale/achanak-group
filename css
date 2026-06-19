@@ -1,0 +1,590 @@
+:root{
+    --primary:#ff6b00;
+    --secondary:#ffb300;
+    --white:#ffffff;
+    --dark:#121212;
+    --light:#f8f9fa;
+    --text:#444;
+    --shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+    background:#fff;
+    color:#333;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#eee;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--primary);
+    border-radius:20px;
+}
+
+/* Preloader */
+
+#preloader{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#fff;
+    z-index:99999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.loader{
+    width:70px;
+    height:70px;
+    border:6px solid #eee;
+    border-top:6px solid var(--primary);
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* Navbar */
+
+.custom-navbar{
+    background:rgba(255,107,0,.95);
+    backdrop-filter:blur(15px);
+    transition:.4s;
+    padding:15px 0;
+}
+
+.navbar-brand{
+    font-size:28px;
+    font-weight:700;
+}
+
+.nav-link{
+    color:#fff !important;
+    margin-left:15px;
+    font-weight:500;
+    position:relative;
+}
+
+.nav-link::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:3px;
+    background:#fff;
+    transition:.3s;
+}
+
+.nav-link:hover::after{
+    width:100%;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(
+    rgba(0,0,0,.4),
+    rgba(0,0,0,.4)),
+    url('../images/ganpati/banner.jpg');
+
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:70px;
+    font-weight:800;
+}
+
+.hero span{
+    color:#ffd54f;
+}
+
+.hero p{
+    font-size:18px;
+    margin:20px 0;
+}
+
+.hero-img{
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-20px);
+    }
+}
+
+/* Buttons */
+
+.btn-warning{
+    background:var(--secondary);
+    border:none;
+    padding:12px 30px;
+    font-weight:600;
+    transition:.4s;
+}
+
+.btn-warning:hover{
+    transform:translateY(-5px);
+}
+
+.btn-outline-light:hover{
+    transform:translateY(-5px);
+}
+
+/* Statistics */
+
+.stat-card{
+    background:#fff;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    transition:.4s;
+}
+
+.stat-card:hover{
+    transform:translateY(-15px);
+}
+
+.stat-card h2{
+    color:var(--primary);
+    font-size:40px;
+    font-weight:700;
+}
+
+/* Section Title */
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    color:var(--primary);
+    font-size:42px;
+    font-weight:700;
+}
+
+/* Cards */
+
+.card{
+    border:none;
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    transition:.4s;
+}
+
+.card img{
+    height:250px;
+    object-fit:cover;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* Gallery */
+
+.gallery-img{
+    width:100%;
+    border-radius:15px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.gallery-img:hover{
+    transform:scale(1.05);
+}
+
+/* Footer */
+
+footer{
+    background:#111;
+    color:white;
+    padding:70px 0;
+}
+
+footer h4{
+    color:var(--secondary);
+}
+
+footer a{
+    color:#fff;
+    font-size:22px;
+    margin-right:15px;
+    transition:.3s;
+}
+
+footer a:hover{
+    color:var(--secondary);
+}
+
+/* Scroll Top */
+
+#scrollTop{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:55px;
+    height:55px;
+    border:none;
+    background:var(--primary);
+    color:white;
+    border-radius:50%;
+    display:none;
+    z-index:999;
+}
+
+/* Progress Bar */
+
+.progress-bar-top{
+    position:fixed;
+    top:0;
+    left:0;
+    height:4px;
+    background:#ffd54f;
+    width:0%;
+    z-index:99999;
+}
+
+/* Dark Mode */
+
+.dark-mode{
+    background:#121212;
+    color:white;
+}
+
+.dark-mode .stat-card,
+.dark-mode .card{
+    background:#1e1e1e;
+    color:white;
+}
+
+.dark-mode footer{
+    background:#000;
+}
+.page-banner{
+    background:linear-gradient(
+    rgba(0,0,0,.6),
+    rgba(0,0,0,.6)),
+    url('../images/ganpati/banner.jpg');
+
+    background-size:cover;
+    background-position:center;
+    padding:180px 0 100px;
+    color:white;
+}
+
+.page-banner h1{
+    font-size:60px;
+    font-weight:700;
+}
+
+.founder-img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+}
+
+.vision-card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    transition:.4s;
+}
+
+.vision-card:hover{
+    transform:translateY(-10px);
+}
+
+.vision-card i{
+    font-size:50px;
+    color:#ff6b00;
+    margin-bottom:20px;
+}
+
+.timeline{
+    position:relative;
+    margin-top:50px;
+}
+
+.timeline::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    width:4px;
+    height:100%;
+    background:#ff6b00;
+}
+
+.timeline-item{
+    width:45%;
+    padding:20px;
+    background:white;
+    margin-bottom:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+    border-radius:15px;
+}
+
+.timeline-item:nth-child(odd){
+    margin-right:auto;
+}
+
+.timeline-item:nth-child(even){
+    margin-left:auto;
+}
+.committee-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+    padding-bottom:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    transition:.4s;
+}
+
+.committee-card:hover{
+    transform:translateY(-15px);
+}
+
+.committee-card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.committee-card h4{
+    margin-top:15px;
+    font-weight:700;
+}
+
+.committee-card span{
+    color:#ff6b00;
+    font-weight:600;
+}
+
+.social-links{
+    margin-top:15px;
+}
+
+.social-links a{
+    color:#ff6b00;
+    font-size:22px;
+    margin:0 8px;
+}
+
+.social-links a:hover{
+    color:#ffb300;
+}
+.countdown-section{
+background:#fff7eb;
+padding:80px 0;
+}
+
+.count-box{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.count-box h3{
+font-size:50px;
+color:#ff6b00;
+font-weight:700;
+}
+
+.filter-btn{
+margin:5px;
+}
+
+.event-card{
+transition:.3s;
+}
+.gallery-filter{
+margin:5px;
+}
+
+.gallery-item{
+overflow:hidden;
+}
+
+.gallery-img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:15px;
+cursor:pointer;
+transition:.4s;
+}
+
+.gallery-img:hover{
+transform:scale(1.05);
+}
+
+#lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:99999;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+#closeLightbox{
+position:absolute;
+top:30px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+.ratio iframe{
+border-radius:15px;
+}
+.donation-form{
+background:#fff;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.donation-form .form-control{
+padding:15px;
+border-radius:10px;
+}
+
+.upi-card{
+background:#fff;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+text-align:center;
+}
+
+.qr-image{
+max-width:250px;
+}
+
+.payment-icons{
+margin-top:20px;
+}
+
+.payment-icons i{
+font-size:40px;
+margin:10px;
+color:#ff6b00;
+}
+
+.payment-icons i:hover{
+color:#ffb300;
+}
+.membership-form{
+background:#fff;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.membership-form .form-control{
+padding:14px;
+border-radius:10px;
+}
+
+.benefit-card{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+transition:.4s;
+}
+
+.benefit-card:hover{
+transform:translateY(-10px);
+}
+
+.benefit-card i{
+font-size:50px;
+color:#ff6b00;
+margin-bottom:15px;
+}
+
+.preview-image{
+width:180px;
+height:180px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid #ff6b00;
+margin-top:15px;
+}
+.news-card .card{
+border:none;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+transition:.4s;
+}
+
+.news-card .card:hover{
+transform:translateY(-10px);
+}
+
+.news-card img{
+height:250px;
+object-fit:cover;
+}
+
+.badge{
+font-size:14px;
+padding:8px 15px;
+}
